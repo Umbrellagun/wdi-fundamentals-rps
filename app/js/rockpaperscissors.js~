@@ -56,26 +56,28 @@ function playToFive() {
 
     while (playerWins < 5 && computerWins < 5) {
 
-        winner = getWinner(getPlayerMove(), getComputerMove());
+        var winner = getWinner(getPlayerMove(), getComputerMove());
         var message = "";        
 
         if(winner == "player"){
             message = "You won!";
             playerWins++;
-        } else if(currentWinner == "computer"){
+        } else if(winner == "computer"){
             message = "You lost. :(";
             computerWins++;
         } else {
             message = "It's a tie, try again!";
         }
   
-     console.log("Player chose " + playerMove + " and Computer chose " + computerMove);
+     console.log("Player chose " + getPlayerMove() + " and Computer chose " + getComputerMove());
      console.log(message);
      console.log("Player wins: " + playerWins);
      console.log("Computer wins: " + computerWins);
     }
+
+   return [playerWins, computerWins];
+
 }
 
-    return [playerWins, computerWins];
-}
+playToFive();
 

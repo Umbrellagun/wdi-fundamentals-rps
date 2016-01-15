@@ -36,14 +36,14 @@ function getWinner(playerMove, computerMove) {
 
     if(playerMove == computerMove) {
         winner = "tie";
-    } else if (computerMove == "rock" && playerMove == "scissors") {
-        winner = "computer";
-    } else if (computerMove == "scissors" && playerMove == "paper") {
-        winner = "computer";
-    } else if (computerMove == "paper" && playerMove == "rock") {
-        winner = "computer";
-    } else {
+    } else if (computerMove == "paper" && playerMove == "scissors") {
         winner = "player";
+    } else if (computerMove == "rock" && playerMove == "paper") {
+        winner = "player";
+    } else if (computerMove == "scissors" && playerMove == "rock") {
+        winner = "player";
+    } else {
+        winner = "computer";
     }
   
     return winner;
